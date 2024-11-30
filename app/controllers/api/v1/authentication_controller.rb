@@ -1,5 +1,4 @@
 class Api::V1::AuthenticationController < ApplicationController
-
   SECRET_KEY =  Rails.application.credentials[:jwt_secret]
 
   # POST /api/v1/login
@@ -9,7 +8,7 @@ class Api::V1::AuthenticationController < ApplicationController
       token = generate_token(user.id)
       render json: { token: token, user: { id: user.id, name: user.name, email: user.email } }, status: :ok
     else
-      render json: { error: 'Invalid email or password' }, status: :unauthorized
+      render json: { error: "Invalid email or password" }, status: :unauthorized
     end
   end
 
@@ -21,4 +20,3 @@ class Api::V1::AuthenticationController < ApplicationController
     JWT.encode(payload, SECRET_KEY)
   end
 end
-

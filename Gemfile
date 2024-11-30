@@ -47,4 +47,4 @@ group :development, :test do
 end
 
 # For JWT encoding and decoding
-gem 'jwt'
+gem "jwt"

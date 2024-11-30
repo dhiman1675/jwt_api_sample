@@ -9,10 +9,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :api do
     namespace :v1 do
-      post 'register', to: 'users#create'
-      post 'login', to: 'authentication#login'
-      get 'user', to: 'users#show'
+      post "register", to: "users#create"
+      post "login", to: "authentication#login"
+      get "user", to: "users#show"
     end
   end
-
 end
